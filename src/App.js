@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import "./sass/App.css";
+import "./sass/App.scss";
+import Navigation from "./components/Navigation/Navigation";
 import Heading from "./components/Heading";
 import ProfilePhoto from "./components/ProfilePhoto";
 import RepoList from "./components/RepoList";
@@ -25,9 +26,12 @@ export default function App({ username }) {
             avatarUrl={myGitHubData.avatar_url}
             avatarAlt={myGitHubData.name}
           />
-          <Heading name={myGitHubData.name} />
-          <RepoList username={username} />
+          <Heading name={myGitHubData.name} size="2" color="grey" />
         </header>
+        <Navigation />
+        <main>
+          <RepoList username={username} />
+        </main>
       </div>
     );
   }
