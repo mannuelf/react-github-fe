@@ -10,7 +10,7 @@ export default function App({ username }) {
         <Home username={username} />
       </Route>
       <Route path="/about">
-        <About />
+        <About username={username} />
       </Route>
     </Switch>
   );
