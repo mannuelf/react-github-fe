@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { ListGroup } from "react-bootstrap";
+import { MdOpenInNew } from "react-icons/md";
 
 export default function RepoList({ username }) {
   const [repoList, setRepoList] = useState(null);
@@ -15,17 +17,19 @@ export default function RepoList({ username }) {
 
   if (repoList) {
     return (
-      <ul>
-        {repoList.map((repo) => {
-          return (
-            <li key={repo.id}>
-              <a href={repo.html_url}>
-                {repo.name} <i>ICON</i>
-              </a>
-            </li>
-          );
-        })}
-      </ul>
+      <>
+        <ListGroup>
+          {repoList.map((repo) => {
+            return (
+              <ListGroup.Item key={repo.id}>
+                <a href={repo.html_url}>
+                  {repo.name} <MdOpenInNew />
+                </a>
+              </ListGroup.Item>
+            );
+          })}
+        </ListGroup>
+      </>
     );
   }
 
