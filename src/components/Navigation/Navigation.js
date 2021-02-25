@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Navigation.module.scss";
+import Navbar from "react-bootstrap/Navbar";
 
 export default function Navigation() {
   return (
-    <nav className={styles.appNavigation}>
+    <Navbar bg="light">
       <NavLink to="/">Home</NavLink>
       <NavLink
         to="/about"
@@ -14,6 +15,6 @@ export default function Navigation() {
       >
         About
       </NavLink>
-    </nav>
+    </Navbar>
   );
 }
