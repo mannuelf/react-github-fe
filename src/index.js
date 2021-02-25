@@ -3,15 +3,14 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./sass/index.scss";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+
+const myName = "mannuelf";
 
 ReactDOM.render(
   <Router>
     <React.StrictMode>
-      <App username="mannuelf" />
+      <App username={myName} surname="ferreira" />
     </React.StrictMode>
   </Router>,
   document.getElementById("root")
 );
-
-reportWebVitals(console.log);
